@@ -41,21 +41,21 @@ const TestimonialsSection = () => (
                     quote="Qreeb Lik a divisé par deux mon temps de gestion administrative. Je peux enfin me concentrer pleinement sur mes consultations."
                     name="Dr. Fatima El Farassi"
                     title="Cardiologue, Casablanca"
-                    imageSrc="https://placehold.co/100x100/E0E7FF/4F46E5?text=FEF"
+                    imageSrc="/assets/Gemini_Generated_Image_t041lht041lht041.png"
                 />
                 <TestimonialCard
                     // ✅ Escaped apostrophes in the quote
                     quote="La plateforme est incroyablement intuitive. Mon assistante l&apos;a adoptée en moins d&apos;une journée. Un vrai gain d&apos;efficacité pour toute l&apos;équipe."
                     name="Dr. Ahmed Amani"
                     title="Pédiatre, Rabat"
-                    imageSrc="https://placehold.co/100x100/E0E7FF/4F46E5?text=YA"
+                    imageSrc="/assets/Gemini_Generated_Image_t041lht041lht041.png"
                 />
                 <TestimonialCard
                     // ✅ Escaped apostrophe in the quote
                     quote="J&apos;ai vu une augmentation de 20% de nouveaux patients depuis que j&apos;utilise Qreeb Lik. La visibilité est excellente."
                     name="Dr. Sofia Habchour"
                     title="Dermatologue, Marrakech"
-                    imageSrc="https://placehold.co/100x100/E0E7FF/4F46E5?text=SB"
+                    imageSrc="/assets/Gemini_Generated_Image_t041lht041lht041.png"
                 />
             </div>
         </div>
