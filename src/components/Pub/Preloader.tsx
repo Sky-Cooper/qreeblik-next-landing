@@ -1,4 +1,4 @@
-// MedicalPreloaderEnhanced.tsx
+"use client";// MedicalPreloaderEnhanced.tsx
 import Image from 'next/image';
 
 import React, { useEffect, useMemo, useState } from "react";

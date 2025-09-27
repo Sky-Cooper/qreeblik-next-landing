@@ -1,3 +1,4 @@
+"use client";
 import { Linkedin, Facebook, X, Instagram, Youtube, MessageSquare, Phone } from 'lucide-react';
 import Image from 'next/image';
 

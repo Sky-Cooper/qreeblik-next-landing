@@ -1,3 +1,4 @@
+"use client";
 import { motion, type Variants } from 'framer-motion';
 
 // Configuration des variantes pour l'animation séquentielle
