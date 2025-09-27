@@ -1,4 +1,5 @@
 import { Linkedin, Facebook, X, Instagram, Youtube, MessageSquare, Phone } from 'lucide-react';
+import Image from 'next/image';
 
 const TikTokIcon = ({ size = 20, ...props }) => (
   <svg
@@ -30,7 +31,12 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 text-center md:text-left">
           <div>
-            <img src="./assets/qreblogo.png" alt="Qreeb Lik Logo" className="h-10 mx-auto md:mx-0" />
+            <Image
+              src="/assets/logo.png"
+              alt="Qreeb Lik Logo"
+              width={32}
+              height={32}
+            />
             <p className="text-slate-400 mt-4">La santé, simplifiée.</p>
           </div>
 
@@ -46,7 +52,8 @@ const Footer = () => {
           <div>
             <h4 className="font-bold text-lg text-slate-200">Légal</h4>
             <ul className="space-y-3 mt-4">
-              <li><a href="/privacy-policy" className="text-slate-400 hover:text-sky-400 hover:underline transition-colors">Conditions d'utilisation</a></li>
+              {/* ✅ Corrected apostrophe here */}
+              <li><a href="/privacy-policy" className="text-slate-400 hover:text-sky-400 hover:underline transition-colors">Conditions d&apos;utilisation</a></li>
               <li><a href="/privacy-policy" className="text-slate-400 hover:text-sky-400 hover:underline transition-colors">Politique de confidentialité</a></li>
             </ul>
           </div>

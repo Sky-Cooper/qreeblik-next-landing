@@ -1,4 +1,6 @@
 // MedicalPreloaderEnhanced.tsx
+import Image from 'next/image';
+
 import React, { useEffect, useMemo, useState } from "react";
 import {
   Heart,
@@ -261,7 +263,13 @@ const MedicalPreloaderEnhanced: React.FC<MedicalPreloaderEnhancedProps> = ({
       {/* Center content */}
       <div className="preloader-center">
         <div className="logo-plate glow" role="img" aria-label="App logo">
-          <img src="/logo.png" alt="logo" className="logo-img" />
+          <Image
+  src="/assets/logo.png"
+  alt="Qreeb Lik Logo"
+  width={32}  // The base width in pixels (e.g., w-8 -> 32px)
+  height={32} // The base height in pixels (e.g., h-8 -> 32px)
+  className="w-8 h-8" // You can keep your Tailwind classes
+/>
         </div>
 
         {/* ECG / Rhythm line with a pulse heart in the center */}

@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next'
- 
+ import Image from 'next/image';
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.qreeblik.com';
 
