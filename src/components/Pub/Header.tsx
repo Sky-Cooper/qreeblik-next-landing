@@ -46,8 +46,8 @@ const Header = () => {
                         </span>
                     </Link>
                     
-                    {/* 👇 THIS NAVIGATION IS HIDDEN ON MOBILE AND VISIBLE ON TABLET (md) AND UP */}
-                    <nav className="hidden md:flex items-center space-x-8">
+                    {/* ✅ FIX: Changed md:flex to lg:flex to show on larger screens */}
+                    <nav className="hidden lg:flex items-center space-x-8">
                         {navLinks.map((link) => (
                             link.dropdown ? (
                                 <div key={link.name} className="relative group">
@@ -71,23 +71,23 @@ const Header = () => {
                         ))}
                     </nav>
 
-                    {/* 👇 THIS BUTTON SECTION IS ALSO HIDDEN ON MOBILE AND VISIBLE ON TABLET (md) AND UP */}
-                    <div className="hidden md:flex items-center gap-4">
+                    {/* ✅ FIX: Changed md:flex to lg:flex here as well */}
+                    <div className="hidden lg:flex items-center gap-4">
                          <Link href="https://dashboard.qreeblik.com/login" className={`px-6 py-3 font-bold rounded-full shadow-lg transition-all duration-300 ${isScrolled ? 'bg-gradient-to-r from-blue-600 to-blue-500 text-white hover:scale-105' : 'bg-white text-blue-700 hover:bg-white/90'}`}>
                             Essayer Qreeb Lik
                         </Link>
                     </div>
 
-                    {/* 👇 THIS HAMBURGER BUTTON IS VISIBLE ON MOBILE AND HIDDEN ON TABLET (md) AND UP */}
-                    <button onClick={() => setIsOpen(!isOpen)} className={`md:hidden transition-colors ${isScrolled ? 'text-slate-800' : 'text-white'}`}>
+                    {/* ✅ FIX: Changed md:hidden to lg:hidden to keep the hamburger menu on tablets */}
+                    <button onClick={() => setIsOpen(!isOpen)} className={`lg:hidden transition-colors ${isScrolled ? 'text-slate-800' : 'text-white'}`}>
                         {isOpen ? <X /> : <Menu />}
                     </button>
                 </div>
             </div>
             
-            {/* 👇 THIS MOBILE MENU IS VISIBLE ONLY WHEN "isOpen" AND HIDDEN ON TABLET (md) AND UP */}
+            {/* ✅ FIX: Changed md:hidden to lg:hidden to allow the mobile menu on tablets */}
             {isOpen && (
-                <div className="md:hidden bg-white border-t border-slate-200">
+                <div className="lg:hidden bg-white border-t border-slate-200">
                     <div className="px-6 py-4 flex flex-col space-y-4">
                         {navLinks.map((link) => (
                              link.dropdown ? (
