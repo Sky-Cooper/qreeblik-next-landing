@@ -47,7 +47,7 @@ type StatCardProps = {
     label: string;
 };
 
-// Composant réutilisable pour chaque carte de statistique
+// Reusable StatCard component
 const StatCard = ({ variant, icon, value, label }: StatCardProps) => (
     <motion.div 
         className="bg-white p-8 rounded-2xl shadow-lg text-center border border-slate-100 flex flex-col items-center"
@@ -56,20 +56,23 @@ const StatCard = ({ variant, icon, value, label }: StatCardProps) => (
         <div className="w-16 h-16 bg-gradient-to-br from-blue-100 to-teal-100 rounded-full flex items-center justify-center mb-5">
             {icon}
         </div>
-        <h3 className="text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-teal-500">{value}</h3>
+        {/* ✅ Tweak: Made font size responsive for better mobile viewing */}
+        <h3 className="text-4xl sm:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-teal-500">{value}</h3>
         <p className="mt-2 text-slate-600 font-semibold">{label}</p>
     </motion.div>
 );
 
 const StatsSection = () => (
-    <section className="py-24 bg-slate-50">
+    // ✅ Tweak: Made vertical padding responsive
+    <section className="py-20 md:py-24 bg-slate-50">
         <motion.div
             className="max-w-7xl mx-auto px-6"
             variants={containerVariants}
             initial="hidden"
-            whileInView="visible" // L'animation se déclenche quand la section devient visible
-            viewport={{ once: true, amount: 0.5 }} // Se déclenche une fois, quand 50% de la section est visible
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
         >
+            {/* ✅ This grid layout is already perfectly responsive */}
             <div className="grid md:grid-cols-3 gap-8">
                 <StatCard 
                     variant={fromLeftVariant}
@@ -95,4 +98,3 @@ const StatsSection = () => (
 );
 
 export default StatsSection;
-

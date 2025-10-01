@@ -1,4 +1,4 @@
-"use client"; // ✅ This is a Client Component because it uses state and effects
+"use client"; 
 
 import { Menu, X, ChevronDown } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -34,7 +34,6 @@ const Header = () => {
             <div className="max-w-7xl mx-auto px-6">
                 <div className={`flex justify-between items-center transition-all duration-300 ${isScrolled ? 'h-16' : 'h-20'}`}>
                     <Link href="/" className="flex items-center gap-3">
-                        {/* ✅ Use Next.js Image component with path from /public */}
                         <Image
                             src="/assets/logo.png"
                             alt="Qreeb Lik Logo"
@@ -43,10 +42,11 @@ const Header = () => {
                             className={`transition-all duration-300 ${isScrolled ? 'h-8 w-8' : 'h-9 w-9'}`}
                         />
                         <span className={`text-2xl font-bold transition-colors ${isScrolled ? 'bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-500' : 'text-white'}`}>
-                            Qreeb Lik™
+                            Qreeb Lik<sup>&trade;</sup>
                         </span>
                     </Link>
                     
+                    {/* 👇 THIS NAVIGATION IS HIDDEN ON MOBILE AND VISIBLE ON TABLET (md) AND UP */}
                     <nav className="hidden md:flex items-center space-x-8">
                         {navLinks.map((link) => (
                             link.dropdown ? (
@@ -57,7 +57,6 @@ const Header = () => {
                                     </button>
                                     <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-64 bg-white rounded-lg shadow-xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-10">
                                         {link.dropdown.map((item) => (
-                                            // ✅ Use Link for internal navigation
                                             <Link key={item.name} href={item.href} className="block w-full text-left px-4 py-2 text-slate-600 rounded-md hover:bg-slate-100 hover:text-blue-600">
                                                 {item.name}
                                             </Link>
@@ -65,7 +64,6 @@ const Header = () => {
                                     </div>
                                 </div>
                             ) : (
-                                // Use <a> for anchor links, <Link> for page links
                                 <a key={link.name} href={link.href} className={`font-semibold transition-colors ${isScrolled ? 'text-slate-600 hover:text-blue-600' : 'text-white/80 hover:text-white'}`}>
                                     {link.name}
                                 </a>
@@ -73,17 +71,21 @@ const Header = () => {
                         ))}
                     </nav>
 
+                    {/* 👇 THIS BUTTON SECTION IS ALSO HIDDEN ON MOBILE AND VISIBLE ON TABLET (md) AND UP */}
                     <div className="hidden md:flex items-center gap-4">
                          <Link href="https://dashboard.qreeblik.com/login" className={`px-6 py-3 font-bold rounded-full shadow-lg transition-all duration-300 ${isScrolled ? 'bg-gradient-to-r from-blue-600 to-blue-500 text-white hover:scale-105' : 'bg-white text-blue-700 hover:bg-white/90'}`}>
                             Essayer Qreeb Lik
                         </Link>
                     </div>
+
+                    {/* 👇 THIS HAMBURGER BUTTON IS VISIBLE ON MOBILE AND HIDDEN ON TABLET (md) AND UP */}
                     <button onClick={() => setIsOpen(!isOpen)} className={`md:hidden transition-colors ${isScrolled ? 'text-slate-800' : 'text-white'}`}>
                         {isOpen ? <X /> : <Menu />}
                     </button>
                 </div>
             </div>
             
+            {/* 👇 THIS MOBILE MENU IS VISIBLE ONLY WHEN "isOpen" AND HIDDEN ON TABLET (md) AND UP */}
             {isOpen && (
                 <div className="md:hidden bg-white border-t border-slate-200">
                     <div className="px-6 py-4 flex flex-col space-y-4">
@@ -94,8 +96,8 @@ const Header = () => {
                                     <div className="flex flex-col space-y-3 pt-3 pl-3">
                                         {link.dropdown.map((item) => (
                                              <Link key={item.name} href={item.href} className="font-semibold text-slate-600 hover:text-blue-600" onClick={() => setIsOpen(false)}>
-                                                {item.name}
-                                            </Link>
+                                                 {item.name}
+                                             </Link>
                                         ))}
                                     </div>
                                 </div>
