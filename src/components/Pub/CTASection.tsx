@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { motion, type Variants, AnimatePresence } from "framer-motion";
 import Image from 'next/image';
 
-const mobileScreens = ["/assets/pa7.jpg", "/assets/pa2.jpg", "/assets/pa3.jpg"];
+const mobileScreens = ["/assets/pa1.jpg", "/assets/pa2.jpg", "/assets/pa4.jpg"];
 const pcScreens = ["/assets/pic1.png", "/assets/pic2.png", "/assets/pic3.png", "/assets/pic4.png"];
 
 const sectionVariants: Variants = {
