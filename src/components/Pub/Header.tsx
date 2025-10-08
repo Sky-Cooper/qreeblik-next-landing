@@ -16,15 +16,15 @@ const Header = () => {
     }, []);
 
     const navLinks = [
-        { name: 'Espace Patient', href: '#patients' },
-        { name: 'Espace Médecin', href: '#features' },
+        /* { name: 'Espace Patient', href: '#patients' },
+       { name: 'Espace Médecin', href: '#features' },*/
         { name: 'Comment ça marche', href: '#how-it-works' },
         { name: 'Témoignages', href: '#testimonials' },
         {
             name: 'Nos Politiques',
             dropdown: [
-                { name: 'Confidentialité (Médecin)', href: 'https://dashboard.qreeblik.com/privacy-policy' },
-                { name: 'Confidentialité (Patient)', href: 'https://dashboard.qreeblik.com/patient-policy' }
+                { name: 'Confidentialité 1', href: 'https://dashboard.qreeblik.com/privacy-policy' },
+                { name: 'Confidentialité 2', href: 'https://dashboard.qreeblik.com/patient-policy' }
             ]
         }
     ];
