@@ -48,10 +48,10 @@ const content: Record<TabId, Feature[]> = {
 };
 
 // --- Animation variants can also stay outside ---
-const sectionVariants: Variants = { /* ... */ };
-const itemVariants: Variants = { /* ... */ };
-const cardGridVariants: Variants = { /* ... */ };
-const cardVariants: Variants = { /* ... */ };
+const sectionVariants: Variants = {};
+const itemVariants: Variants = {};
+const cardGridVariants: Variants = {};
+const cardVariants: Variants = {};
 
 
 const FeaturesTabsSection = () => {
@@ -73,19 +73,13 @@ const FeaturesTabsSection = () => {
                 </motion.div>
                 <motion.div className="flex justify-center flex-wrap gap-2 mb-12" variants={itemVariants}>
                     {tabs.map(tab => (
+                        // ✅ FIX APPLIED HERE
                         <button 
                             key={tab.id} 
                             onClick={() => setActiveTab(tab.id)} 
-                            className={`px-6 py-3 font-bold rounded-full transition-all duration-300 relative ${activeTab === tab.id ? 'text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
+                            className={`px-6 py-3 font-bold rounded-full transition-all duration-300 ${activeTab === tab.id ? 'bg-blue-600 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
                         >
-                            {activeTab === tab.id && (
-                                <motion.div
-                                    layoutId="active-tab-indicator"
-                                    className="absolute inset-0 bg-blue-600 rounded-full"
-                                    transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-                                ></motion.div>
-                            )}
-                            <span className="relative z-10">{tab.label}</span>
+                            {tab.label}
                         </button>
                     ))}
                 </motion.div>
@@ -101,8 +95,8 @@ const FeaturesTabsSection = () => {
                     >
                         {content[activeTab].map((item) => (
                             <motion.div 
-                                key={item.title} // <-- IMPROVEMENT: Stable key
-                                className="bg-slate-50 p-6 rounded-2xl border border-slate-200/80 w-full md:w-2/5 lg:w-[30%]" // <-- FIX: Removed 'flex-grow'
+                                key={item.title}
+                                className="bg-slate-50 p-6 rounded-2xl border border-slate-200/80 w-full md:w-2/5 lg:w-[30%]"
                                 variants={cardVariants}
                             >
                                 <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center mb-4 shadow-sm">{item.icon}</div>
