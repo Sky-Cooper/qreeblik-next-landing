@@ -47,13 +47,11 @@ const FeaturesTabsSection = () => {
     return (
         <section id="features" className="py-24 bg-white">
             <div className="max-w-7xl mx-auto px-6">
-                {/* Section Header */}
                 <div className="text-center mb-16">
                     <span className="text-blue-600 font-semibold uppercase tracking-wider">Fonctionnalités</span>
                     <h2 className="text-4xl md:text-5xl font-extrabold tracking-tighter mt-2 text-slate-900">Une plateforme, tous les outils.</h2>
                 </div>
                 
-                {/* Three-Column Grid */}
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                     {featureColumns.map((column) => (
                         <div 
