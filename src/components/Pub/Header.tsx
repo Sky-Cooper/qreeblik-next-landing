@@ -141,7 +141,7 @@ const Header = () => {
                             )
                         ))}
                         <Link href="https://dashboard.qreeblik.com/login" className="px-6 py-3 mt-4 text-center bg-gradient-to-r from-blue-600 to-blue-500 text-white font-bold rounded-full shadow-lg">
-                            Essayer Qreeb lik
+                            Essayer
                         </Link>
                     </div>
                 </div>
