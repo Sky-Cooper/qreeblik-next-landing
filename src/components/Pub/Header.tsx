@@ -100,7 +100,7 @@ const Header = () => {
                     {/* ✅ Changed to md:flex */}
                     <div className="hidden md:flex items-center gap-4">
                          <Link href="https://dashboard.qreeblik.com/login" className={`px-6 py-3 font-bold rounded-full shadow-lg transition-all duration-300 ${isScrolled ? 'bg-gradient-to-r from-blue-600 to-blue-500 text-white hover:scale-105' : 'bg-white text-blue-700 hover:bg-white/90'}`}>
-                            Essayer Qreeb Lik
+                            Essayer 
                         </Link>
                     </div>
 
