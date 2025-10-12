@@ -8,7 +8,7 @@ import {
     LayoutDashboard, Search, Shield, Star, Users, Wallet, Zap, History 
 } from "lucide-react";
 
-// --- Data moved outside the component for better performance ---
+// Types
 type Feature = {
     icon: ReactElement;
     title: string;
@@ -16,6 +16,7 @@ type Feature = {
 };
 type TabId = 'pratique' | 'patients' | 'confiance';
 
+// Data
 const tabs: { id: TabId; label: string }[] = [
     { id: 'pratique', label: '🚀 Renforcement de la Pratique' },
     { id: 'patients', label: '🌟 Engagement Patient' },
@@ -47,12 +48,15 @@ const content: Record<TabId, Feature[]> = {
     ]
 };
 
-// --- Animation variants can also stay outside ---
-const sectionVariants: Variants = {};
-const itemVariants: Variants = {};
-const cardGridVariants: Variants = {};
-const cardVariants: Variants = {};
-
+// ✅ A single, simple variant for safe fading
+const simpleFade: Variants = {
+    hidden: { opacity: 0 },
+    visible: { 
+        opacity: 1,
+        transition: { staggerChildren: 0.05 } // Optional: makes cards appear one by one
+    },
+    exit: { opacity: 0 }
+};
 
 const FeaturesTabsSection = () => {
     const [activeTab, setActiveTab] = useState<TabId>('pratique');
@@ -61,43 +65,41 @@ const FeaturesTabsSection = () => {
         <motion.section 
             id="features" 
             className="py-24 bg-white"
-            variants={sectionVariants}
             initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
+            animate="visible"
+            variants={simpleFade}
         >
             <div className="max-w-7xl mx-auto px-6">
-                <motion.div className="text-center mb-12" variants={itemVariants}>
+                <div className="text-center mb-12">
                     <span className="text-blue-600 font-semibold uppercase tracking-wider">Fonctionnalités</span>
                     <h2 className="text-4xl md:text-5xl font-extrabold tracking-tighter mt-2 text-slate-900">Une plateforme, tous les outils.</h2>
-                </motion.div>
-                <motion.div className="flex justify-center flex-wrap gap-2 mb-12" variants={itemVariants}>
+                </div>
+                <div className="flex justify-center flex-wrap gap-2 mb-12">
                     {tabs.map(tab => (
-                        // ✅ FIX APPLIED HERE
                         <button 
                             key={tab.id} 
                             onClick={() => setActiveTab(tab.id)} 
-                            className={`px-6 py-3 font-bold rounded-full transition-all duration-300 ${activeTab === tab.id ? 'bg-blue-600 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
+                            className={`px-6 py-3 font-bold rounded-full transition-colors duration-200 ${activeTab === tab.id ? 'bg-blue-600 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
                         >
                             {tab.label}
                         </button>
                     ))}
-                </motion.div>
+                </div>
                 
                 <AnimatePresence mode="wait">
                     <motion.div 
                         key={activeTab}
                         className="flex flex-wrap justify-center gap-8"
-                        variants={cardGridVariants}
+                        variants={simpleFade}
                         initial="hidden"
                         animate="visible"
-                        exit="hidden"
+                        exit="exit"
                     >
                         {content[activeTab].map((item) => (
                             <motion.div 
                                 key={item.title}
                                 className="bg-slate-50 p-6 rounded-2xl border border-slate-200/80 w-full md:w-2/5 lg:w-[30%]"
-                                variants={cardVariants}
+                                variants={simpleFade} // Use the same simple fade for each card
                             >
                                 <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center mb-4 shadow-sm">{item.icon}</div>
                                 <h3 className="text-xl font-bold mb-2 text-slate-900">{item.title}</h3>
