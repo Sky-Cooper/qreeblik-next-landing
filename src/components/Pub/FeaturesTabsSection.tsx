@@ -1,6 +1,5 @@
 "use client";
 
-import { motion, type Variants } from 'framer-motion';
 import type { ReactElement } from "react";
 import { 
     BarChart2, BrainCircuit, Calendar, CalendarPlus, Clock, Gem, 
@@ -14,7 +13,6 @@ type Feature = {
     text: string;
 };
 
-// The content is now structured in an array to make it easier to map over
 const featureColumns: { title: string; features: Feature[] }[] = [
     {
         title: "🚀 Renforcement de la Pratique",
@@ -45,55 +43,22 @@ const featureColumns: { title: string; features: Feature[] }[] = [
     }
 ];
 
-// --- Stable Animation Variants ---
-const containerVariants: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2, // This will make each column appear one after the other
-    },
-  },
-};
-
-const columnVariants: Variants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { 
-    opacity: 1, 
-    y: 0,
-    transition: { duration: 0.5, ease: "easeOut" }
-  },
-};
-
 const FeaturesTabsSection = () => {
     return (
         <section id="features" className="py-24 bg-white">
             <div className="max-w-7xl mx-auto px-6">
                 {/* Section Header */}
-                <motion.div 
-                    className="text-center mb-16"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.5 }}
-                    transition={{ duration: 0.5 }}
-                >
+                <div className="text-center mb-16">
                     <span className="text-blue-600 font-semibold uppercase tracking-wider">Fonctionnalités</span>
                     <h2 className="text-4xl md:text-5xl font-extrabold tracking-tighter mt-2 text-slate-900">Une plateforme, tous les outils.</h2>
-                </motion.div>
+                </div>
                 
                 {/* Three-Column Grid */}
-                <motion.div 
-                    className="grid grid-cols-1 lg:grid-cols-3 gap-8"
-                    variants={containerVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, amount: 0.2 }}
-                >
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                     {featureColumns.map((column) => (
-                        <motion.div 
+                        <div 
                             key={column.title} 
                             className="bg-slate-50 p-6 rounded-2xl border border-slate-200/80 flex flex-col"
-                            variants={columnVariants}
                         >
                             <h3 className="text-xl font-bold mb-6 text-slate-900">{column.title}</h3>
                             <div className="flex flex-col gap-6">
@@ -109,9 +74,9 @@ const FeaturesTabsSection = () => {
                                     </div>
                                 ))}
                             </div>
-                        </motion.div>
+                        </div>
                     ))}
-                </motion.div>
+                </div>
             </div>
         </section>
     );
