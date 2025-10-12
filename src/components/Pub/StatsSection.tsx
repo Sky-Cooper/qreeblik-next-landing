@@ -50,24 +50,20 @@ type StatCardProps = {
 // Reusable StatCard component
 const StatCard = ({ variant, icon, value, label }: StatCardProps) => (
     <motion.div 
-        // ✨ COLOR CHANGE: Card is now dark gray with a subtle border
-        className="bg-gray-900 p-8 rounded-2xl shadow-lg text-center border border-white/10 flex flex-col items-center"
+        className="bg-white p-8 rounded-2xl shadow-lg text-center border border-slate-100 flex flex-col items-center"
         variants={variant}
     >
-        {/* ✨ COLOR CHANGE: Icon background is a darker gray */}
-        <div className="w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center mb-5">
+        <div className="w-16 h-16 bg-gradient-to-br from-blue-100 to-teal-100 rounded-full flex items-center justify-center mb-5">
             {icon}
         </div>
-        {/* ✨ COLOR CHANGE: Text is now white */}
-        <h3 className="static text-4xl sm:text-5xl font-extrabold text-white">{value}</h3>
-        {/* ✨ COLOR CHANGE: Label text is a lighter gray */}
-        <p className="mt-2 text-gray-400 font-semibold">{label}</p>
+        <h3 className="static text-4xl sm:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-teal-500">{value}</h3>
+        <p className="mt-2 text-slate-600 font-semibold">{label}</p>
     </motion.div>
 );
 
 const StatsSection = () => (
-    // ✨ COLOR CHANGE: Section background is now black
-    <section className="py-20 md:py-24 bg-black">
+    // Made vertical padding responsive for better mobile view
+    <section className="py-20 md:py-24 bg-slate-50">
         <motion.div
             className="max-w-7xl mx-auto px-6"
             variants={containerVariants}
@@ -75,35 +71,30 @@ const StatsSection = () => (
             whileInView="visible"
             viewport={{ once: true, amount: 0.5 }}
         >
+            {/* This grid layout is already perfectly responsive */}
             <div className="grid md:grid-cols-3 gap-8">
                 <StatCard 
                     variant={fromLeftVariant}
-                    // ✨ COLOR CHANGE: Icon is white
-                    icon={<Clock size={32} className="text-white" />}
+                    icon={<Clock size={32} className="text-blue-600" />}
                     value={
                         <>
-                            <span className="md:hidden">8h/semaine</span>
-                            <span className="hidden md:inline">8H/S</span>
+                           <span className="md:hidden">8h/semaine</span>
+                           <span className="hidden md:inline">8H/S</span>
                         </>
                     }
-                    // ✨ TEXT CHANGE: Medical term generalized
-                    label="de temps de gestion économisé"
+                    label="de temps administratif économisé"
                 />
                 <StatCard 
                     variant={fromCenterVariant}
-                    // ✨ COLOR CHANGE: Icon is white
-                    icon={<Users size={32} className="text-white" />}
+                    icon={<Users size={32} className="text-teal-600" />}
                     value="+25%"
-                    // ✨ TEXT CHANGE: Medical term generalized
-                    label="de nouveaux clients en moyenne"
+                    label="de nouveaux patients en moyenne"
                 />
                 <StatCard 
                     variant={fromRightVariant}
-                    // ✨ COLOR CHANGE: Icon is white
-                    icon={<Star size={32} className="text-white" />}
+                    icon={<Star size={32} className="text-blue-600" />}
                     value="98%"
-                    // ✨ TEXT CHANGE: Medical term generalized
-                    label="de satisfaction client"
+                    label="de satisfaction patient"
                 />
             </div>
         </motion.div>
@@ -111,5 +102,4 @@ const StatsSection = () => (
 );
 
 export default StatsSection;
-
 
