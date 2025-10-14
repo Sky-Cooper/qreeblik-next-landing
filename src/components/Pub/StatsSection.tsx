@@ -88,7 +88,7 @@ const StatsSection = () => (
                     variant={fromCenterVariant}
                     icon={<Users size={32} className="text-teal-600" />}
                     value="+25%"
-                    label="de nouveaux patients en moyenne"
+                    label="de augmentation en moyenne"
                 />
                 <StatCard 
                     variant={fromRightVariant}
