@@ -94,7 +94,7 @@ const StatsSection = () => (
                     variant={fromRightVariant}
                     icon={<Star size={32} className="text-blue-600" />}
                     value="98%"
-                    label="de satisfaction patient"
+                    label="de satisfaction "
                 />
             </div>
         </motion.div>
