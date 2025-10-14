@@ -36,8 +36,8 @@ const Header = () => {
         {
             name: 'Nos Politiques',
             dropdown: [
-                { name: 'Confidentialité (Médecin)', href: 'https://dashboard.qreeblik.com/privacy-policy' },
-                { name: 'Confidentialité (Patient)', href: 'https://dashboard.qreeblik.com/patient-policy' }
+                { name: 'Confidentialité (web)', href: 'https://dashboard.qreeblik.com/privacy-policy' },
+                { name: 'Confidentialité (Mobile)', href: 'https://dashboard.qreeblik.com/patient-policy' }
             ]
         }
     ];
