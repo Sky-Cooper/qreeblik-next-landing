@@ -16,10 +16,6 @@ export default function HomePage() {
       <main>
         <HeroSection />
         <StatsSection />
-        <PatientsSection />
-        <HowItWorksSection />
-        <TestimonialsSection />
-        <CTASection />
       </main>
   
     </>

@@ -29,8 +29,8 @@ const Header = () => {
     }, []);
 
     const navLinks = [
-        { name: 'Espace Patient', href: '#patients' },
-        { name: 'Espace Médecin', href: '#features' },
+       /* { name: 'Espace Patient', href: '#patients' },
+        { name: 'Espace Médecin', href: '#features' },*/
         { name: 'Comment ça marche', href: '#how-it-works' },
         { name: 'Témoignages', href: '#testimonials' },
         {
