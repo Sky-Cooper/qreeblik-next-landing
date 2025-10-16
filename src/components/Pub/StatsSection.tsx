@@ -88,13 +88,13 @@ const StatsSection = () => (
                     variant={fromCenterVariant}
                     icon={<Users size={32} className="text-teal-600" />}
                     value="+25%"
-                    label="de augmentation en moyenne"
+                    label="de nouveaux patients en moyenne"
                 />
                 <StatCard 
                     variant={fromRightVariant}
                     icon={<Star size={32} className="text-blue-600" />}
                     value="98%"
-                    label="de satisfaction "
+                    label="de satisfaction patient"
                 />
             </div>
         </motion.div>

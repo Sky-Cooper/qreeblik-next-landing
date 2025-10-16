@@ -71,11 +71,11 @@ const HeroSection = () => {
               Qreeb Lik
             </motion.span>
             <motion.h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight" style={{ textShadow: '0 4px 15px rgba(0,0,0,0.3)' }} variants={itemVariants}>
-              Votre Solution {' '}
+              La Solution Santé{' '}
               <span className="text-cyan-300">Tout-En-Un</span>
             </motion.h1>
             <motion.p className="max-w-lg mx-auto md:mx-0 text-lg text-indigo-100/90 leading-relaxed" variants={itemVariants}>
-              Une expérience de soin optimisée et un outil de
+              Une expérience de soin optimisée pour les et un outil de
               gestion puissant .
             </motion.p>
             <motion.div className="flex justify-center md:justify-start gap-4 flex-wrap pt-3" variants={itemVariants}>
@@ -91,8 +91,8 @@ const HeroSection = () => {
             </motion.div>
             <motion.div className="flex justify-center md:justify-start gap-8 pt-8" variants={itemVariants}>
               {[
-               /* { value: '25+', label: 'Médecins' },
-                { value: '100+', label: 'Patients' },*/
+                { value: '25+', label: 'Médecins' },
+                { value: '100+', label: 'Patients' },
                 { value: '98%', label: 'Satisfaction' },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
